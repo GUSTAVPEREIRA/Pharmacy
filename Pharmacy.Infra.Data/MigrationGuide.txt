@@ -1,0 +1,10 @@
+﻿USE THIS COMMANDS TO CREATING MIGRATIONS
+
+// Example how to add Migraiton
+Add-Migration InitialCreate -Context ApplicationContext -OutputDir Migrations/PostgreSQL
+
+// Update database
+Update-Database
+
+// Remove Migrations
+Remove-Migration
