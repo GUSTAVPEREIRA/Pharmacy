@@ -5,6 +5,9 @@ using Pharmacy.Services.IServices.Users;
 
 namespace Pharmacy.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -21,7 +24,7 @@ namespace Pharmacy.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Creating a new user
         /// </summary>
         /// <param name="userDTO"></param>
         /// <returns></returns>

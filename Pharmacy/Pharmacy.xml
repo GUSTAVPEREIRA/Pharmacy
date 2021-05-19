@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Pharmacy</name>
+    </assembly>
+    <members>
+        <member name="M:Pharmacy.Controllers.AuthenticateController.#ctor(Pharmacy.Services.IServices.Tokens.ITokenService,Pharmacy.Services.IServices.Users.IUserService)">
+            <summary>
+            
+            </summary>
+            <param name="tokenService"></param>
+            <param name="userService"></param>
+        </member>
+        <member name="M:Pharmacy.Controllers.AuthenticateController.Authenticate(Pharmacy.DTO.Users.UserLoginDTO)">
+            <summary>
+            
+            </summary>
+            <param name="userDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pharmacy.Controllers.UserController.#ctor(Pharmacy.Services.IServices.Users.IUserService)">
+            <summary>
+            
+            </summary>
+            <param name="userService"></param>
+        </member>
+        <member name="M:Pharmacy.Controllers.UserController.CreateUser(Pharmacy.DTO.Users.UserDTO)">
+            <summary>
+            
+            </summary>
+            <param name="userDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pharmacy.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Pharmacy.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Pharmacy.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Pharmacy.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Pharmacy.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Pharmacy.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Pharmacy.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>        
+        </member>
+    </members>
+</doc>

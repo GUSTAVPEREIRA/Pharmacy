@@ -6,6 +6,9 @@ using Pharmacy.Services.IServices.Users;
 
 namespace Pharmacy.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class AuthenticateController : ControllerBase
