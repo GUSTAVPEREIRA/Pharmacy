@@ -4,6 +4,11 @@
         <name>Pharmacy</name>
     </assembly>
     <members>
+        <member name="T:Pharmacy.Controllers.AuthenticateController">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:Pharmacy.Controllers.AuthenticateController.#ctor(Pharmacy.Services.IServices.Tokens.ITokenService,Pharmacy.Services.IServices.Users.IUserService)">
             <summary>
             
@@ -18,18 +23,28 @@
             <param name="userDTO"></param>
             <returns></returns>
         </member>
+        <member name="T:Pharmacy.Controllers.UserController">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:Pharmacy.Controllers.UserController.#ctor(Pharmacy.Services.IServices.Users.IUserService)">
             <summary>
             
             </summary>
             <param name="userService"></param>
         </member>
-        <member name="M:Pharmacy.Controllers.UserController.CreateUser(Pharmacy.DTO.Users.UserDTO)">
+        <member name="M:Pharmacy.Controllers.UserController.CreateUser(Pharmacy.DTO.Users.NewUserDTO)">
             <summary>
-            
+            Creating a new user
             </summary>
             <param name="userDTO"></param>
             <returns></returns>
+        </member>
+        <member name="T:Pharmacy.Program">
+            <summary>
+            
+            </summary>
         </member>
         <member name="M:Pharmacy.Program.Main(System.String[])">
             <summary>

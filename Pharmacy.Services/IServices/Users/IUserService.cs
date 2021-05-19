@@ -4,7 +4,7 @@ namespace Pharmacy.Services.IServices.Users
 {
     public interface IUserService
     {
-        public UserDTO CreateUser(UserDTO userDTO);
-        public UserDTO GetUserByUsernameAndPassword(string username, string password);
+        public NewUserDTO CreateUser(NewUserDTO userDTO);
+        public NewUserDTO GetUserByUsernameAndPassword(string username, string password);
     }
 }

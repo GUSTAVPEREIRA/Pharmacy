@@ -4,6 +4,6 @@ namespace Pharmacy.Services.IServices.Tokens
 {
     public interface ITokenService
     {
-        public string GenerateToken(UserDTO user);
+        public string GenerateToken(NewUserDTO user);
     }
 }

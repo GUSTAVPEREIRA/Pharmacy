@@ -13,6 +13,9 @@ namespace Pharmacy.Infra.Data.Mappings.Users
             builder.Entity<User>().Property(p => p.Username).HasMaxLength(30).IsRequired();
             builder.Entity<User>().Property(p => p.Password).HasMaxLength(100).IsRequired();
             builder.Entity<User>().Property(p => p.Name).HasMaxLength(100).IsRequired();
+            builder.Entity<User>().Property(p => p.CreatedAt).IsRequired();
+            builder.Entity<User>().Property(p => p.UpdatedAt).IsRequired();
+            builder.Entity<User>().Property(p => p.DeletedAt).IsRequired(false);
         }
     }
 }

@@ -12,13 +12,13 @@ namespace Pharmacy.MappingDTO.UsersMapping
     {
         public UserMappingDTO()
         {
-            CreateMap<User, UserDTO>()
+            CreateMap<User, NewUserDTO>()
                 .ForMember(d => d.Id, opt => opt.MapFrom(o => o.Id))
                 .ForMember(d => d.Name, opt => opt.MapFrom(o => o.Name))
                 .ForMember(d => d.Username, opt => opt.MapFrom(o => o.Username))
                 .ForMember(d => d.Password, opt => opt.MapFrom(o => o.Password));
 
-            CreateMap<UserDTO, User>()
+            CreateMap<NewUserDTO, User>()
                 .ForMember(d => d.Id, opt => opt.MapFrom(o => o.Id))
                 .ForMember(d => d.Name, opt => opt.MapFrom(o => o.Name))
                 .ForMember(d => d.Username, opt => opt.MapFrom(o => o.Username))

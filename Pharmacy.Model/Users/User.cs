@@ -25,6 +25,9 @@ namespace Pharmacy.Model.Users
         public string Username { get; set; }
         public DateTime CreatedAt { get; private set; }
 
+        /// <summary>
+        /// When this property have date, this user has been deleted.
+        /// </summary>
         public DateTime? DeletedAt { get; private set; }
         public DateTime UpdatedAt { get; private set; }
 
