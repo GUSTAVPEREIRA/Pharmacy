@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Pharmacy.Infra.Data.Mappings.Categories;
 using Pharmacy.Infra.Data.Mappings.Users;
+using Pharmacy.Model.Categories;
 using Pharmacy.Model.Users;
 
 namespace Pharmacy.Infra.Data
@@ -8,6 +10,7 @@ namespace Pharmacy.Infra.Data
     {
         //Code example please use this logic
         public DbSet<User> TbUsers { get; set; }
+        public DbSet<Category> TbCategories { get; set; }
 
         public ApplicationContext()
         {
@@ -30,7 +33,7 @@ namespace Pharmacy.Infra.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             new UserMapping().Mapping(ref builder);
-
+            new CategoryMapping().Mapping(ref builder);
 
             base.OnModelCreating(builder);
         }

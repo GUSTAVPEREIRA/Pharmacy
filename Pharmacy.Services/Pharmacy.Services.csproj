@@ -16,8 +16,4 @@
     <ProjectReference Include="..\Pharmacy.MappingDTO\Pharmacy.MappingDTO.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\Categories\" />
-  </ItemGroup>
-
 </Project>

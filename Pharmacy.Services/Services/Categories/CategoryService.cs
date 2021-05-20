@@ -1,11 +1,12 @@
 ﻿using AutoMapper;
 using Pharmacy.DTO.Categories;
 using Pharmacy.Extensions.Exceptions;
+using Pharmacy.Extensions.Queryable;
 using Pharmacy.Infra.Repositories.IRepositories.Categories;
 using Pharmacy.Model.Categories;
 using Pharmacy.Services.IServices.Categories;
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 
 namespace Pharmacy.Services.Services.Categories
@@ -50,9 +51,26 @@ namespace Pharmacy.Services.Services.Categories
             return categoryDTO;
         }
 
-        public List<CategoryDTO> ListCategoryByParameters(string name, int id)
+        public List<CategoryDTO> ListCategoryByParameters(string search, int id, int size, int page)
         {
-            throw new NotImplementedException();
+            var categoryList = _categoryRepository.GetAll();
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                categoryList = categoryList.Where(w => w.Name.Contains(search) || w.SubName.Contains(search));
+            }
+
+            if (id != 0)
+            {
+                categoryList = categoryList.Where(w => w.Id == id);
+            }
+
+            var paginatedList = new PaginatedList<Category>(categoryList, page, size);
+            var list = paginatedList.AsQueryable().ToList();
+
+            var categoryListDTO = _mapper.Map<List<Category>, List<CategoryDTO>>(list);
+
+            return categoryListDTO;
         }
 
         public CategoryDTO UpdateCategory(CategoryDTO dto)

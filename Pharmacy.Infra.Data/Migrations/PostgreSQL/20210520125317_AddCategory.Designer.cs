@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Pharmacy.Infra.Data;
@@ -9,9 +10,10 @@ using Pharmacy.Infra.Data;
 namespace Pharmacy.Infra.Data.Migrations.PostgreSQL
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20210520125317_AddCategory")]
+    partial class AddCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,9 +23,9 @@ namespace Pharmacy.Infra.Data.Migrations.PostgreSQL
 
             modelBuilder.Entity("Pharmacy.Model.Categories.Category", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<short>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
+                        .HasColumnType("smallint")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("Name")

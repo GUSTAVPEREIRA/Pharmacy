@@ -8,6 +8,7 @@ namespace Pharmacy.Initializer
         {
             services.AddScoped<Services.IServices.Users.IUserService, Services.Services.Users.UserService>();
             services.AddScoped<Services.IServices.Tokens.ITokenService, Services.Services.Tokens.TokenService>();
+            services.AddScoped<Services.IServices.Categories.ICategoryService, Services.Services.Categories.CategoryService>();
         }
     }
 }
