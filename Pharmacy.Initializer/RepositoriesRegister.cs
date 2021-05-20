@@ -1,6 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Pharmacy.Infra.Repositories.IRepositories.Users;
-using Pharmacy.Infra.Repositories.Repositories.Users;
 
 namespace Pharmacy.Initializer
 {
@@ -8,7 +6,8 @@ namespace Pharmacy.Initializer
     {
         public static void AddRepositories(this IServiceCollection serviceColletion)
         {
-            serviceColletion.AddScoped<IUserRepository, UserRepository>();
+            serviceColletion.AddScoped<Infra.Repositories.IRepositories.Users.IUserRepository, Infra.Repositories.Repositories.Users.UserRepository>();
+            serviceColletion.AddScoped<Infra.Repositories.IRepositories.Categories.ICategoryRepository, Infra.Repositories.Repositories.Categories.CategoryRepository>();
         }
     }
 }

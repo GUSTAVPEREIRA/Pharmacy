@@ -21,7 +21,7 @@ namespace Pharmacy.Services.Services.Users
             _mapper = mapper;
         }
 
-        public NewUserDTO CreateUser(NewUserDTO userDTO)
+        public UserDTO CreateUser(NewUserDTO userDTO)
         {
             var user = _mapper.Map<NewUserDTO, User>(userDTO);
 
@@ -31,13 +31,13 @@ namespace Pharmacy.Services.Services.Users
             }
 
             _userRepository.Save(user);
-            userDTO.Id = user.Id;
-            userDTO.Password = "";
 
-            return userDTO;
+            var newUser = _mapper.Map<User, UserDTO>(user);
+
+            return newUser;
         }
 
-        public NewUserDTO GetUserByUsernameAndPassword(string username, string password)
+        public UserDTO GetUserByUsernameAndPassword(string username, string password)
         {
             var result = _userRepository.GetUserByUsernameAndPassword(username);
 
@@ -47,7 +47,7 @@ namespace Pharmacy.Services.Services.Users
             }
 
             var validPassowrd = new PBKDF2().Verify(password, result.Password);
-            var userDTO = _mapper.Map<User, NewUserDTO>(result);
+            var userDTO = _mapper.Map<User, UserDTO>(result);
 
             if (!validPassowrd)
             {

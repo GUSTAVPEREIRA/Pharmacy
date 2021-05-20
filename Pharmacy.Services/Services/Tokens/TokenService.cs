@@ -13,7 +13,7 @@ namespace Pharmacy.Services.Services.Tokens
 {
     public class TokenService : ITokenService
     {
-        public string GenerateToken(NewUserDTO user)
+        public string GenerateToken(UserDTO user)
         {
 
             if (user == null)

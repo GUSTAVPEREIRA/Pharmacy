@@ -23,6 +23,11 @@
             <param name="userDTO"></param>
             <returns></returns>
         </member>
+        <member name="T:Pharmacy.Controllers.CategoryController">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:Pharmacy.Controllers.UserController">
             <summary>
             
