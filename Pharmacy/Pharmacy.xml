@@ -23,6 +23,55 @@
             <param name="userDTO"></param>
             <returns></returns>
         </member>
+        <member name="T:Pharmacy.Controllers.CategoryController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Pharmacy.Controllers.CategoryController.#ctor(Pharmacy.Services.IServices.Categories.ICategoryService)">
+            <summary>
+            
+            </summary>
+            <param name="categoryService"></param>
+        </member>
+        <member name="M:Pharmacy.Controllers.CategoryController.CreateCategory(Pharmacy.DTO.Categories.NewCategoryDTO)">
+            <summary>
+            Create a new category
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pharmacy.Controllers.CategoryController.GetCategory(System.Int32)">
+            <summary>
+            Get one category by ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pharmacy.Controllers.CategoryController.UpdateCategory(Pharmacy.DTO.Categories.CategoryDTO)">
+            <summary>
+            Updated one category
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pharmacy.Controllers.CategoryController.DeleteCategory(System.Int32)">
+            <summary>
+            Delete one category by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pharmacy.Controllers.CategoryController.ListCategoryId(System.Int32,System.Int32,System.String,System.Int32)">
+            <summary>
+            List All categories by these parameters 
+            </summary>
+            <param name="page"></param>
+            <param name="size"></param>
+            <param name="name"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="T:Pharmacy.Controllers.UserController">
             <summary>
             

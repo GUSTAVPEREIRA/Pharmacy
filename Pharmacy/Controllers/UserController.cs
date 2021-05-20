@@ -30,7 +30,7 @@ namespace Pharmacy.Controllers
         /// <returns></returns>
         [Route("create")]
         [HttpPost]
-        public ActionResult<NewUserDTO> CreateUser(NewUserDTO userDTO)
+        public ActionResult<UserDTO> CreateUser(NewUserDTO userDTO)
         {
             try
             {

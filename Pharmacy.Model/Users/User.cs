@@ -15,6 +15,7 @@ namespace Pharmacy.Model.Users
         {
             Username = username;
             SetPassword(password);
+            CreatedAt = DateTime.UtcNow;
             Name = name;
             Updated();
         }
