@@ -12,7 +12,7 @@ namespace Pharmacy.MappingDTO.UsersMapping
     {
         public UserMappingDTO()
         {
-            CreateMap<User, NewUserDTO>()
+            CreateMap<User, BaseUserDTO>()
                 .ForMember(d => d.Name, opt => opt.MapFrom(o => o.Name))
                 .ForMember(d => d.Username, opt => opt.MapFrom(o => o.Username))
                 .ForMember(d => d.Password, opt => opt.MapFrom(o => o.Password))
@@ -21,7 +21,7 @@ namespace Pharmacy.MappingDTO.UsersMapping
                     d.Password = "";
                 });
 
-            CreateMap<NewUserDTO, User>()
+            CreateMap<BaseUserDTO, User>()
                 .ForMember(d => d.Name, opt => opt.MapFrom(o => o.Name))
                 .ForMember(d => d.Username, opt => opt.MapFrom(o => o.Username))
                 .AfterMap((o, d) =>

@@ -2,7 +2,7 @@
 
 namespace Pharmacy.DTO.Users
 {
-    public class NewUserDTO
+    public class BaseUserDTO
     {        
         [Required(ErrorMessage = "O nome é um campo obrigatório!")]
         [StringLength(100, ErrorMessage = "O nome pode conter de 1 a 100 caracteres!")]

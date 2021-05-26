@@ -8,6 +8,7 @@ namespace Pharmacy.Initializer
         {
             serviceColletion.AddScoped<Infra.Repositories.IRepositories.Users.IUserRepository, Infra.Repositories.Repositories.Users.UserRepository>();
             serviceColletion.AddScoped<Infra.Repositories.IRepositories.Categories.ICategoryRepository, Infra.Repositories.Repositories.Categories.CategoryRepository>();
+            serviceColletion.AddScoped<Infra.Repositories.IRepositories.Products.IProductRepository, Infra.Repositories.Repositories.Products.ProductRepository>();
         }
     }
 }

@@ -21,9 +21,9 @@ namespace Pharmacy.Services.Services.Users
             _mapper = mapper;
         }
 
-        public UserDTO CreateUser(NewUserDTO userDTO)
+        public UserDTO CreateUser(BaseUserDTO userDTO)
         {
-            var user = _mapper.Map<NewUserDTO, User>(userDTO);
+            var user = _mapper.Map<BaseUserDTO, User>(userDTO);
 
             if (_userRepository.VerifyIfUserExist(user.Username))
             {

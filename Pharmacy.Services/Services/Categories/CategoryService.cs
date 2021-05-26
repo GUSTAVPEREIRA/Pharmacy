@@ -3,6 +3,7 @@ using Pharmacy.DTO.Categories;
 using Pharmacy.Extensions.Exceptions;
 using Pharmacy.Extensions.Queryable;
 using Pharmacy.Infra.Repositories.IRepositories.Categories;
+using Pharmacy.Infra.Repositories.IRepositories.Products;
 using Pharmacy.Model.Categories;
 using Pharmacy.Services.IServices.Categories;
 using System.Collections.Generic;
@@ -14,17 +15,19 @@ namespace Pharmacy.Services.Services.Categories
     public class CategoryService : ICategoryService
     {
         private readonly ICategoryRepository _categoryRepository;
+        private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
 
-        public CategoryService(ICategoryRepository categoryRepository, IMapper mapper)
+        public CategoryService(ICategoryRepository categoryRepository, IProductRepository productRepository, IMapper mapper)
         {
             _categoryRepository = categoryRepository;
+            _productRepository = productRepository;
             _mapper = mapper;
         }
 
-        public CategoryDTO CreateCategory(NewCategoryDTO dto)
+        public CategoryDTO CreateCategory(BaseCategoryDTO dto)
         {
-            var category = _mapper.Map<NewCategoryDTO, Category>(dto);
+            var category = _mapper.Map<BaseCategoryDTO, Category>(dto);
             _categoryRepository.Save(category);
             var categoryDTO = _mapper.Map<Category, CategoryDTO>(category);
 
@@ -34,10 +37,17 @@ namespace Pharmacy.Services.Services.Categories
         public void DeletedCategoryById(int id)
         {
             var category = _categoryRepository.FindById(id);
-
+            
             if (category == null)
             {
                 throw new APIException($"Categoria com o ID {id} não encontrada!", HttpStatusCode.NotFound);
+            }
+
+            var existCategory = _productRepository.VerifyIfExistProductWithCategoryId(id);
+
+            if (existCategory)
+            {
+                throw new APIException($"Categoria não pode ser deletada, pois ela possui relação com produtros cadastrados!", HttpStatusCode.BadRequest);
             }
 
             _categoryRepository.Delete(category);

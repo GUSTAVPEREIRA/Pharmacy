@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Pharmacy.DTO.Categories;
+using Pharmacy.DTO.Products;
 using Pharmacy.Extensions.Exceptions;
-using Pharmacy.Services.IServices.Categories;
+using Pharmacy.Services.IServices.Products;
 using System.Collections.Generic;
 using System.Net;
 
@@ -13,38 +13,36 @@ namespace Pharmacy.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoryController : ControllerBase
+    public class ProductController : ControllerBase
     {
-        private readonly ICategoryService _categoryService;
+        private readonly IProductService _productService;
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="categoryService"></param>
-        public CategoryController(ICategoryService categoryService)
+        /// <param name="productService"></param>
+        public ProductController(IProductService productService)
         {
-            _categoryService = categoryService;
+            _productService = productService;
         }
 
         /// <summary>
-        /// Create a new category
+        /// 
         /// </summary>
-        /// <param name="dto"></param>
-        /// <returns></returns>
         [HttpPost]
         [Route("create")]
         [Authorize]
-        public ActionResult<CategoryDTO> CreateCategory(BaseCategoryDTO dto)
+        public ActionResult<ProductDTO> CreateProduct(BaseProductDTO baseProductDTO)
         {
             try
             {
-                var newCategory = _categoryService.CreateCategory(dto);
+                var produdct = _productService.CreateProduct(baseProductDTO);
 
                 return new OkObjectResult(new
                 {
-                    Message = "Categoria criada!",
+                    Message = "Produto criado!",
                     Code = HttpStatusCode.OK,
-                    Result = newCategory
+                    Result = produdct
                 });
             }
             catch (APIException ex)
@@ -57,58 +55,112 @@ namespace Pharmacy.Controllers
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        [HttpPut]
+        [Route("update")]
+        [Authorize]
+        public ActionResult<dynamic> UpdateProduct(ProductDTO productDTO)
+        {
+            try
+            {
+                var produdct = _productService.UpdateProduct(productDTO);
+
+                return new OkObjectResult(new
+                {
+                    Message = "Produto criado!",
+                    Code = HttpStatusCode.OK,
+                    Result = produdct
+                });
+            }
+            catch (APIException ex)
+            {
+                return new BadRequestObjectResult(new
+                {
+                    ex.Message,
+                    Code = ex.StatusCode
+                });
+            }
+        }
 
         /// <summary>
-        /// Get one category by ID
+        /// 
+        /// </summary>
+        [HttpDelete]
+        [Route("delete")]
+        [Authorize]
+        public ActionResult<dynamic> DeleteProduct(int id)
+        {
+            try
+            {
+                _productService.DeleteProduct(id);
+
+                return new OkObjectResult(new
+                {
+                    Message = $"Produto {id} deletado!",
+                    Code = HttpStatusCode.OK
+                });
+            }
+            catch (APIException ex)
+            {
+                return new BadRequestObjectResult(new
+                {
+                    ex.Message,
+                    Code = ex.StatusCode
+                });
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [HttpPost]
+        [Route("disable")]
+        [Authorize]
+        public ActionResult<ProductDTO> DisableProduct(int id, bool enable = false)
+        {
+            try
+            {
+                var produdct = _productService.EnableOrDisableProduct(id, enable);
+                var mensageAux = produdct.DeletedAt.HasValue == true ? "desabilitado!" : "habilitado!";
+
+                return new OkObjectResult(new
+                {
+                    Message = $"Produto foi {mensageAux}!",
+                    Code = HttpStatusCode.OK,
+                    Result = produdct
+                });
+            }
+            catch (APIException ex)
+            {
+                return new BadRequestObjectResult(new
+                {
+                    ex.Message,
+                    Code = ex.StatusCode
+                });
+            }
+        }
+
+        /// <summary>
+        /// 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
         [Route("get")]
         [Authorize]
-        public ActionResult<CategoryDTO> GetCategory(int id)
+        public ActionResult<ProductDTO> GetProduct(int id)
         {
             try
             {
-                var categoryDTO = _categoryService.FindByIdCategory(id);
+                var productDTO = _productService.GetProductById(id);
 
                 return new OkObjectResult(new
                 {
-                    Message = "Categoria obtida!",
+                    Message = "Produto encontrado!",
                     Code = HttpStatusCode.OK,
-                    Result = categoryDTO
-                });
-            }
-            catch (APIException ex)
-            {
-                return new BadRequestObjectResult(new
-                {
-                    ex.Message,
-                    Code = ex.StatusCode
-                });
-            }
-        }
-
-
-        /// <summary>
-        /// Updated one category
-        /// </summary>
-        /// <param name="dto"></param>
-        /// <returns></returns>
-        [HttpPut]
-        [Route("update")]
-        [Authorize]
-        public ActionResult<CategoryDTO> UpdateCategory(CategoryDTO dto)
-        {
-            try
-            {
-                var categoryDTO = _categoryService.UpdateCategory(dto);
-
-                return new OkObjectResult(new
-                {
-                    Message = "Categoria atualizada!",
-                    Code = HttpStatusCode.OK,
-                    Result = categoryDTO
+                    Result = productDTO
                 });
             }
             catch (APIException ex)
@@ -122,56 +174,27 @@ namespace Pharmacy.Controllers
         }
 
         /// <summary>
-        /// Delete one category by id
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpDelete]
-        [Route("delete")]
-        [Authorize]
-        public ActionResult<dynamic> DeleteCategory(int id)
-        {
-            try
-            {                
-                _categoryService.DeletedCategoryById(id);
-
-                return new OkObjectResult(new
-                {
-                    Message = $"Categoria {id} deletada",
-                    Code = HttpStatusCode.OK,                    
-                });
-            }
-            catch (APIException ex)
-            {
-                return new BadRequestObjectResult(new
-                {
-                    ex.Message,
-                    Code = ex.StatusCode
-                });
-            }
-        }
-
-        /// <summary>
-        /// List All categories by these parameters 
+        /// 
         /// </summary>
         /// <param name="page"></param>
         /// <param name="size"></param>
-        /// <param name="name"></param>
+        /// <param name="search"></param>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
         [Route("list")]
         [Authorize]
-        public ActionResult<List<CategoryDTO>> ListCategory(int page = 0, int size = 30, string name = "", int id = 0)
+        public ActionResult<List<ProductDTO>> GetListProduct(int page, int size, string search, int id)
         {
             try
             {
-                var listCategoryDTO = _categoryService.ListCategoryByParameters(name, id, size, page);
+                var productsList = _productService.ListProductByParameters(search, id, size, page);
 
                 return new OkObjectResult(new
-                {                    
+                {
+                    Message = "Lista de produtos",
                     Code = HttpStatusCode.OK,
-                    Result = listCategoryDTO
+                    Result = productsList
                 });
             }
             catch (APIException ex)

@@ -2,7 +2,7 @@
 
 namespace Pharmacy.DTO.Categories
 {
-    public class NewCategoryDTO
+    public class BaseCategoryDTO
     {
         [Required(ErrorMessage = "O nome é um campo obrigatório!")]
         [MaxLength(100, ErrorMessage = "O campo nome não pode ser maior que 100 caracteres!")]
@@ -10,6 +10,6 @@ namespace Pharmacy.DTO.Categories
 
         [Required(ErrorMessage = "O subname é um campo obrigatório!")]
         [MaxLength(100, ErrorMessage = "O campo subname não pode ser maior que 100 caracteres!")]
-        public string Subname { get; set; }
+        public string SubName { get; set; }
     }
 }
