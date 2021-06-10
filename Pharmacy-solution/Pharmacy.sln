@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy", "Pharmacy\Pharmacy.csproj", "{F2E37941-C012-4698-89CE-E2FBA1D03BD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pharmacy.API", "Pharmacy\Pharmacy.API.csproj", "{F2E37941-C012-4698-89CE-E2FBA1D03BD0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{3E3E305B-3269-4308-BADA-AE1BB62C39B9}"
 EndProject
@@ -17,25 +17,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B9105B07-BC51-4060-B540-0981B9D5D96B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Services", "Pharmacy.Services\Pharmacy.Services.csproj", "{31E6532A-5FB3-4CBC-BAD6-F6F923B2DE69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pharmacy.Services", "Pharmacy.Services\Pharmacy.Services.csproj", "{31E6532A-5FB3-4CBC-BAD6-F6F923B2DE69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Cryptographic", "Phamarcy.Cryptographic\Pharmacy.Cryptographic.csproj", "{81728DD5-6FB4-4613-92F3-56598C07A8CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pharmacy.Cryptographic", "Pharmacy.Cryptographic\Pharmacy.Cryptographic.csproj", "{81728DD5-6FB4-4613-92F3-56598C07A8CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Extensions", "Pharmacy.Extensions\Pharmacy.Extensions.csproj", "{D4BB299F-F451-4DB6-9840-69295E13D4AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pharmacy.Extensions", "Pharmacy.Extensions\Pharmacy.Extensions.csproj", "{D4BB299F-F451-4DB6-9840-69295E13D4AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Initializer", "Pharmacy.Initializer\Pharmacy.Initializer.csproj", "{94493D00-D902-4264-91B1-229CB86B564F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pharmacy.Initializer", "Pharmacy.Initializer\Pharmacy.Initializer.csproj", "{94493D00-D902-4264-91B1-229CB86B564F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.DTO", "Pharmacy.DTO\Pharmacy.DTO.csproj", "{5538200E-E7B3-4657-A57B-F940786B4CC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pharmacy.DTO", "Pharmacy.DTO\Pharmacy.DTO.csproj", "{5538200E-E7B3-4657-A57B-F940786B4CC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.MappingDTO", "Pharmacy.MappingDTO\Pharmacy.MappingDTO.csproj", "{5F851A58-648B-4CC2-AF44-CDAA53933AF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pharmacy.MappingDTO", "Pharmacy.MappingDTO\Pharmacy.MappingDTO.csproj", "{5F851A58-648B-4CC2-AF44-CDAA53933AF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Model", "Pharmacy.Model\Pharmacy.Model.csproj", "{9E89429A-90C3-4FE9-9256-0DE4CB2EC257}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pharmacy.Model", "Pharmacy.Model\Pharmacy.Model.csproj", "{9E89429A-90C3-4FE9-9256-0DE4CB2EC257}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Infra.Data", "Pharmacy.Infra.Data\Pharmacy.Infra.Data.csproj", "{9ABD33F2-BDDC-4207-B463-59B3A463F2D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pharmacy.Infra.Data", "Pharmacy.Infra.Data\Pharmacy.Infra.Data.csproj", "{9ABD33F2-BDDC-4207-B463-59B3A463F2D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Infra.Repositories", "Pharmacy.Infra.Repositories\Pharmacy.Infra.Repositories.csproj", "{DA2E5AF4-F03A-481A-863A-168A4B78CB55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pharmacy.Infra.Repositories", "Pharmacy.Infra.Repositories\Pharmacy.Infra.Repositories.csproj", "{DA2E5AF4-F03A-481A-863A-168A4B78CB55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy.Tests", "Pharmacy.Tests\Pharmacy.Tests.csproj", "{E8716CC2-0FA7-46FF-9ADA-05579251C127}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pharmacy.Tests", "Pharmacy.Tests\Pharmacy.Tests.csproj", "{E8716CC2-0FA7-46FF-9ADA-05579251C127}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{46029E7B-A16E-461E-8C59-362230797FD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{E8716CC2-0FA7-46FF-9ADA-05579251C127}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8716CC2-0FA7-46FF-9ADA-05579251C127}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8716CC2-0FA7-46FF-9ADA-05579251C127}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46029E7B-A16E-461E-8C59-362230797FD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46029E7B-A16E-461E-8C59-362230797FD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46029E7B-A16E-461E-8C59-362230797FD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46029E7B-A16E-461E-8C59-362230797FD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

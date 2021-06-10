@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Phamarcy.Cryptographic\Pharmacy.Cryptographic.csproj" />
+    <ProjectReference Include="..\Pharmacy.Cryptographic\Pharmacy.Cryptographic.csproj" />
     <ProjectReference Include="..\Pharmacy.DTO\Pharmacy.DTO.csproj" />
     <ProjectReference Include="..\Pharmacy.Extensions\Pharmacy.Extensions.csproj" />
     <ProjectReference Include="..\Pharmacy.Infra.Repositories\Pharmacy.Infra.Repositories.csproj" />
