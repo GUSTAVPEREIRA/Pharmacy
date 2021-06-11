@@ -1,0 +1,43 @@
+version: "3.7"
+
+services:
+
+  pharmacydb:
+    build:
+      context: ./Pharmacy-database
+    image: pharmacy-database
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin1234
+      - POSTGRES_DB=pharmacydb
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data/
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=gugupereira123@hotmail.com
+      - PGADMIN_DEFAULT_PASSWORD=admin1234
+    restart: always
+    ports:
+      - "9050:80"
+    volumes:
+      - ./pgadmin_data:/root/.pgadmin
+
+  pharmacy:
+    build:       
+      context: "./Pharmacy-solution"
+    image: pharmacy-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development      
+    # restart: always
+    depends_on:
+      - pharmacydb
+    ports:
+      - "8000:80"      
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/microsoft/usersecrets:/root/.microsoft/usersecrets:ro

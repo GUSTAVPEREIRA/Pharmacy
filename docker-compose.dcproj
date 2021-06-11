@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" Sdk="Microsoft.Docker.Sdk">
+  <PropertyGroup Label="Globals">
+    <ProjectVersion>2.1</ProjectVersion>
+    <DockerTargetOS>Linux</DockerTargetOS>
+    <ProjectGuid>46029e7b-a16e-461e-8c59-362230797fd9</ProjectGuid>
+    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
+    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
+    <DockerServiceName>pharmacy</DockerServiceName>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="docker-compose.yml" />
+    <None Include=".dockerignore" />
+    <None Include="Pharmacy-api\Dockerfile" />
+    <None Include="Pharmacy-database\.vs\slnx.sqlite" />
+    <None Include="Pharmacy-database\.vs\VSWorkspaceState.json" />
+    <None Include="Pharmacy-database\Dockerfile" />
+    <None Include="Pharmacy-database\init-user-db.sh" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pharmacy-database\.vs\Pharmacy-database\v16\" />
+  </ItemGroup>
+</Project>
