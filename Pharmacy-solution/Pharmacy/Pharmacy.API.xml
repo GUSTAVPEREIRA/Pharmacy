@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Pharmacy</name>
+        <name>Pharmacy.API</name>
     </assembly>
     <members>
         <member name="T:Pharmacy.Controllers.AuthenticateController">

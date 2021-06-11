@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Phamarcy.Cryptographic\Pharmacy.Cryptographic.csproj" />
+    <ProjectReference Include="..\Pharmacy.Cryptographic\Pharmacy.Cryptographic.csproj" />
   </ItemGroup>
 
 </Project>
