@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo sleeping;
-sleep 5000
-echo wake up;
-ls
+set -e;
+echo Waiting 15 seconds for settings;
+sleep 15;
+echo Settings made;
 dotnet "Pharmacy.API.dll"
