@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Pharmacy.API</name>
+    </assembly>
+    <members>
+        <member name="T:Pharmacy.Controllers.AuthenticateController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Pharmacy.Controllers.AuthenticateController.#ctor(Pharmacy.Services.IServices.Tokens.ITokenService,Pharmacy.Services.IServices.Users.IUserService)">
+            <summary>
+            
+            </summary>
+            <param name="tokenService"></param>
+            <param name="userService"></param>
+        </member>
+        <member name="M:Pharmacy.Controllers.AuthenticateController.Authenticate(Pharmacy.DTO.Users.UserLoginDTO)">
+            <summary>
+            
+            </summary>
+            <param name="userDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Pharmacy.Controllers.CategoryController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Pharmacy.Controllers.CategoryController.#ctor(Pharmacy.Services.IServices.Categories.ICategoryService)">
+            <summary>
+            
+            </summary>
+            <param name="categoryService"></param>
+        </member>
+        <member name="M:Pharmacy.Controllers.CategoryController.CreateCategory(Pharmacy.DTO.Categories.BaseCategoryDTO)">
+            <summary>
+            Create a new category
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pharmacy.Controllers.CategoryController.GetCategory(System.Int32)">
+            <summary>
+            Get one category by ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pharmacy.Controllers.CategoryController.UpdateCategory(Pharmacy.DTO.Categories.CategoryDTO)">
+            <summary>
+            Updated one category
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pharmacy.Controllers.CategoryController.DeleteCategory(System.Int32)">
+            <summary>
+            Delete one category by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pharmacy.Controllers.CategoryController.ListCategory(System.Int32,System.Int32,System.String,System.Int32)">
+            <summary>
+            List All categories by these parameters 
+            </summary>
+            <param name="page"></param>
+            <param name="size"></param>
+            <param name="name"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Pharmacy.Controllers.ProductController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Pharmacy.Controllers.ProductController.#ctor(Pharmacy.Services.IServices.Products.IProductService)">
+            <summary>
+            
+            </summary>
+            <param name="productService"></param>
+        </member>
+        <member name="M:Pharmacy.Controllers.ProductController.CreateProduct(Pharmacy.DTO.Products.BaseProductDTO)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Pharmacy.Controllers.ProductController.UpdateProduct(Pharmacy.DTO.Products.ProductDTO)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Pharmacy.Controllers.ProductController.DeleteProduct(System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Pharmacy.Controllers.ProductController.DisableProduct(System.Int32,System.Boolean)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Pharmacy.Controllers.ProductController.GetProduct(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pharmacy.Controllers.ProductController.GetListProduct(System.Int32,System.Int32,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="page"></param>
+            <param name="size"></param>
+            <param name="search"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Pharmacy.Controllers.UserController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Pharmacy.Controllers.UserController.#ctor(Pharmacy.Services.IServices.Users.IUserService)">
+            <summary>
+            
+            </summary>
+            <param name="userService"></param>
+        </member>
+        <member name="M:Pharmacy.Controllers.UserController.CreateUser(Pharmacy.DTO.Users.BaseUserDTO)">
+            <summary>
+            Creating a new user
+            </summary>
+            <param name="userDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Pharmacy.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Pharmacy.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Pharmacy.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Pharmacy.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Pharmacy.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Pharmacy.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Pharmacy.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Pharmacy.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>        
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,4 @@
+FROM postgres:latest
+
+ADD init-user-db.sh /docker-entrypoint-initdb.d/init-user-db.sh
+
